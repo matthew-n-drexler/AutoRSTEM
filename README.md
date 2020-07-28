@@ -1,10 +1,2 @@
 # AutoRSTEM
-A tool for the automated analysis of HAADF STEM images
-imganalscript.py contains a simple script that will determine relevant features, connect them in a lattice, and return a list of the connections between features.
-Other files contain methods for more custom methods of analysis.
-fftcompression.py will determine the radius within which all diffraction points are contained.
-rsicompression.py will identify features.
-sandwichsmooth.py will reduce noise.
-lonelattice.py will connect features based on proximity to one another, refine their position, and provide information about the connections.
-pointfitting.py contains methods used by lonelattice to refine feature positions.
-latticeanalysis.py takes the information provided by lonelattice.py and transforms it into a useful form for further analysis.
+A tool for the automated analysis of HAADF STEM images. The general flow of the analysis is given in imganalscript.py, but the individual files can be used independently depending on the analysis. fftcompression.py is used to determine the smallest radius, or half separation distance between features of the image for further steps in the process. rsicompression.py identifies features and sandwichsmooth.py reduces noise based on a specified distance. lonelattice.py will connect a set of points based on proximity to one another to form a lattice, refine their position, and provide information about the connections. pointfitting.py contains methods used by lonelattice to refine feature positions. latticeanalysis.py takes the information provided by lonelattice.py and transforms it into a useful form for further analysis.
